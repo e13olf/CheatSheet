@@ -12,6 +12,7 @@ Dir Enum
 dirsearch.py -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://x.x.x.x/ -e *
 gobuster dir -u http://x.x.x.x/ -w /path/to/directory-list-2.3-medium.txt -x <extension>
 ffuf -c -ic -w /path/to/Web-Content/directory-list-2.3-big.txt -u http://IP/FUZZ -t 100 -fc 401 -v
+./feroxbuster --url https://website.com -x pdf -x js,html -x php txt json,docx -w /SecLists/Discovery/Web-Content/raft-medium-directories.txt -a 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0'
 
 Nikto
 -----
