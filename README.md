@@ -127,9 +127,9 @@ Windows PrivEsc
 Sherlock  (Find-AllVulns)
 Powesploit -PowerUp (Invoke AllChecks)
 
-Windows-Privesc Checker -- git clone https://github.com/pentestmonkey/windows-privesc-check.git
+Windows-Privesc Checker: https://github.com/pentestmonkey/windows-privesc-check.git
 
-https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS
+WinPEAS: https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS
 
 Service Controller
 ------------------
