@@ -226,13 +226,13 @@ HTTP
 
       
 NFS
----
+===
       showmount -e IP
       mkdir /tmp/dir
       sudo mount -t nfs IP:/opt/files /tmp/dir
 
 MYSQL
-----
+=====
       mysql -h <ip> -u root -p
       SHOW DATABASES;
       USE <db_name>
@@ -244,7 +244,7 @@ SQLMap
       sqlmap.py -u http://x.x.x.x:80/login.php --forms --risk=3 --level=5 --dump-all --batch -D <dbname>                 
 
 Samba
------
+=====
       nmap -p 445 --script=smb-enum-shares.nse,smb-enum-users.nse <ip>
 
       smbclient //<ip>/<share-name>
