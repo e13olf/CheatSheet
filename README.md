@@ -124,8 +124,9 @@ Windows PrivEsc
       python exploit-suggester.py --update
       python exploit-suggester.py --database 2017-07-29-mssb.xls --systeminfo systeminfo.txt
 
-Sherlock  (Find-AllVulns)
-Powesploit -PowerUp (Invoke AllChecks)
+**Sherlock  (Find-AllVulns)**
+
+**Powesploit -PowerUp (Invoke AllChecks)**
 
 Windows-Privesc Checker: https://github.com/pentestmonkey/windows-privesc-check.git
 
