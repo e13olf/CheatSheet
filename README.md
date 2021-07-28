@@ -200,8 +200,11 @@ Steganography
       exiftool <file-name>
       steghide extract -sf <file-name>
 
-**Sound**
-Sonic Visualizer {Layer> Add Spectrogram}
+**Sound Analysis**
+
+Sonic Visualizer https://www.sonicvisualiser.org/
+
+{Layer> Add Spectrogram}
 
 Cracking Zip files
 ------------------
