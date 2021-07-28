@@ -200,14 +200,15 @@ Steganography
       exiftool <file-name>
       steghide extract -sf <file-name>
 
-Sound: Sonic Visualizer {Layer> Add Spectrogram}
+**Sound**
+Sonic Visualizer {Layer> Add Spectrogram}
 
 Cracking Zip files
 ------------------
       fcrackzip -b --method 2 -D 2 -p ~/rockyou.txt file.zip
       fcrackzip -D -p /usr/share/wordlists/rockyou.txt -u b******.*** -v
 
-Brute_Forcing Logins
+Brute Forcing Logins
 ====================
 SSH
 ---
