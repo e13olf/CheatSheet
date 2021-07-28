@@ -5,10 +5,8 @@ Full Port Scan:               nmap -p- x.x.x.x -max-retries=2 -oA All_ports
 Aggressive Service Scan:      nmap -sC -sV -p 21,22,80,5435,8082,9092 x.x.x.x -oA Full-Service_Scan
 
 
-Web-Discovery
-=============
-Dir Enum
----------
+Web Diectory Enum
+------------------
 dirsearch.py -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://x.x.x.x/ -e *
 gobuster dir -u http://x.x.x.x/ -w /path/to/directory-list-2.3-medium.txt -x <extension>
 ffuf -c -ic -w /path/to/Web-Content/directory-list-2.3-big.txt -u http://IP/FUZZ -t 100 -fc 401 -v
