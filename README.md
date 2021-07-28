@@ -1,8 +1,8 @@
 Nmap Scans
 -----------
-Aggressive Scan, Top Ports:   nmap -sC -sV x.x.x.x -oA Top-Ports
-Full Port Scan:               nmap -p- x.x.x.x -max-retries=2 -oA All_ports
-Aggressive Service Scan:      nmap -sC -sV -p 21,22,80,5435,8082,9092 x.x.x.x -oA Full-Service_Scan
+      Aggressive Scan, Top Ports:   nmap -sC -sV x.x.x.x -oA Top-Ports
+      Full Port Scan:               nmap -p- x.x.x.x -max-retries=2 -oA All_ports
+      Aggressive Service Scan:      nmap -sC -sV -p 21,22,80,5435,8082,9092 x.x.x.x -oA Full-Service_Scan
 
 
 Web Diectory Enum
