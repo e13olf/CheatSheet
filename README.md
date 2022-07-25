@@ -196,6 +196,7 @@ Steganography
 -------------
       zsteg <file-name.png>
       stegcracker <file-name> <wordlist>
+      stegseek <file.jpeg>
       stegoveritas (w/o)-steghide <file-name>
       exiftool <file-name>
       steghide extract -sf <file-name>
